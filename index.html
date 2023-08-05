@@ -12,7 +12,7 @@
         <nav class="main_menu">
             <div class="logo_and_menu">
                 <div class="logo">
-                    <a href="#"><img src="./img/logo.svg" alt="logo"></a>
+                    <a href="#"><img class="logo_brand" src="./img/logo.svg" alt="logo"></a>
                     <h2 class="brand_name">ANALYTICS</h2>
                 </div>
                 <div class="menu hidden">
@@ -26,16 +26,16 @@
             <div class="butoon_menu">
                 <button class="button_menu_border_none">Sign in</button>
                 <button class="button_menu_border hidden">Sign Up</button>
-                <button class="burger_menu"><img src="./img/menu-icon.svg" alt="burger menu"></button>
+                <button class="button_menu_border_none burger_menu"><img src="./img/menu-icon.svg" alt="burger menu"></button>
             </div>
-            <div class="header_menu_activ active_hidden">
-                <h4 class="header_menu_activ_title">MENU</h4>
-                <ul>
-                    <li class="menu_activ_link"><a href="#">Sign Up</a></li>
-                    <li class="menu_activ_link"><a href="#">Products</a></li>
-                    <li class="menu_activ_link"><a href="#">Pricing</a></li>
-                    <li class="menu_activ_link"><a href="#">FAQ</a></li>
-                    <li class="menu_activ_link"><a href="#">Blog</a></li>
+            <div class="menu_activ hidden_menu">
+                <h4 class="menu_activ_title">MENU</h4>
+                <ul class="menu_list">
+                    <li class="menu_list_link"><a href="#">Sign Up</a></li>
+                    <li class="menu_list_link"><a href="#">Products</a></li>
+                    <li class="menu_list_link"><a href="#">Pricing</a></li>
+                    <li class="menu_list_link"><a href="#">FAQ</a></li>
+                    <li class="menu_list_link"><a href="#">Blog</a></li>
                 </ul>
             </div>
         </nav>
@@ -56,19 +56,25 @@
         </section>
         <section class="advantages_section container">
             <div class="advantages">
-                <img src="./img/monitoring.svg" alt="monitoring_icon">
-                <h3 class="advantages_title">Monitoring 24/7</h3>
-                <p class="advantages_decription">Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.</p>
+                <img class="advantages_img" src="./img/monitoring.svg" alt="monitoring_icon">
+                <div class="advantages_adaptive">
+                    <h3 class="advantages_title">Monitoring 24/7</h3>
+                    <p class="advantages_decription">Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.</p>
+                </div>
             </div>
             <div class="advantages">
-                <img src="./img/widget_sistem.svg" alt="monitoring_icon">
-                <h3 class="advantages_title">Widget System</h3>
-                <p class="advantages_decription">Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.</p>
+                <img class="advantages_img" src="./img/widget_sistem.svg" alt="monitoring_icon">
+                <div class="advantages_adaptive">
+                    <h3 class="advantages_title">Widget System</h3>
+                    <p class="advantages_decription">Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.</p>
+                </div>
             </div>
             <div class="advantages">
-                <img src="./img/perfomance.svg" alt="monitoring_icon">
-                <h3 class="advantages_title">Best Performance</h3>
-                <p class="advantages_decription">Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.</p>
+                <img class="advantages_img" src="./img/perfomance.svg" alt="monitoring_icon">
+                <div class="advantages_adaptive">
+                    <h3 class="advantages_title">Best Performance</h3>
+                    <p class="advantages_decription">Lorem ipsum dolor sit amet, consectetur adipis cing elit. Elementum nisi aliquet volutpat.</p>
+                </div>
             </div>
         </section>
         <section class="information container">
@@ -79,7 +85,7 @@
                 </div>
                 <img class="chaapter_img" src="./img/screen-01.png" alt="infograph">
             </div>
-            <div class="info_chapter">
+            <div class="info_chapter info_chapter_reverce">
                 <img class="chaapter_img" src="./img/screen-02.png" alt="infograph">
                 <div class="chapter_text">
                     <h3 class="chapter_title">Fully customizable to address your needs </h3>
@@ -135,7 +141,7 @@
                 </div>
             </div>
             <div class="subcript_shadow_img">
-                <img class="shadow_img" src="./img/background-subscribe.png" alt="shadow_img">
+                <img class="shadow_img hidden" src="./img/background-subscribe.png" alt="shadow_img">
                 <div class="subcript">
                     <h3 class="subcript_title">Sign Up</h3>
                     <button class="subcript_button">Start your free trial</button>
@@ -184,7 +190,7 @@
     </main>
     <footer class="footer_bacground">
         <section class="footer container">
-            <img src="./img/logo_footer.svg" alt="logo">
+            <img class="logo_footer" src="./img/logo_footer.svg" alt="logo">
             <nav class="menu_footer hidden">
                 <a class="menu_link_footer" href="#">Products</a>
                 <a class="menu_link_footer" href="#">Pricing</a>
@@ -199,13 +205,14 @@
         </section>
     </footer>
     <script>
-        const menuActiv = document.querySelector(".header_menu_activ");
-        const burgerMenu = document.querySelector(".burger_menu");
+        const menuActiv = document.querySelector('.menu_activ');
+        const burgerMenu = document.querySelector('.burger_menu');
 
         function toggleMenu() {
-        menuActiv.classList.toggle("active_hidden");
+        menuActiv.classList.toggle('hidden_menu');
         }
-        burgerMenu.addEventListener("click", toggleMenu);
+
+        burgerMenu.addEventListener('click', toggleMenu);
 
 
         document.querySelector('.subcript_button').onclick = function() {
